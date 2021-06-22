@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0bykl04" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
   <bpmn:process id="CookMasalaVeggiesNoodles" name="Cook Masala Veggies Noodles" isExecutable="true">
-    <bpmn:startEvent id="Event_0mmbodz">
+    <bpmn:startEvent id="Start_Process">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="noodles" label="Do you have a sealed Instant Noodles Packet ?" type="boolean" />
+          <camunda:formField id="onion" label="Do you have a half onion ?" type="boolean" />
+          <camunda:formField id="tomato" label="Do you have a small tomato ?" type="boolean" />
+          <camunda:formField id="cheese" label="Do you have a cheese block ?" type="boolean" />
+          <camunda:formField id="carrot" label="Do you have small carrot ?" type="boolean" />
+          <camunda:formField id="capsicum" label="Do you have half capsicum?" type="boolean" />
+          <camunda:formField id="water" label="do you have 300 ml water ?  " type="boolean" />
+          <camunda:formField id="pan_and_spatula" label="Do you have shallow pan and spatula?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
       <bpmn:outgoing>Flow_02ka33a</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="Flow_02ka33a" sourceRef="Event_0mmbodz" targetRef="CheckIngredients" />
+    <bpmn:sequenceFlow id="Flow_02ka33a" sourceRef="Start_Process" targetRef="CheckIngredients" />
     <bpmn:exclusiveGateway id="CanWeCook" name="Can we cook ?" default="Flow_18j0lcs">
       <bpmn:incoming>Flow_0poernx</bpmn:incoming>
       <bpmn:outgoing>Flow_19c68m1</bpmn:outgoing>
@@ -35,7 +47,7 @@
       </bpmn:timerEventDefinition>
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_1jrxoop" sourceRef="IsItReady" targetRef="Event_0y9m0tm" />
-    <bpmn:exclusiveGateway id="CanWeEat" name="Can we eat it ?" default="Flow_1bpca4z">
+    <bpmn:exclusiveGateway id="CanWeEat" name="Is it eatable?" default="Flow_1bpca4z">
       <bpmn:incoming>Flow_1gn37vq</bpmn:incoming>
       <bpmn:outgoing>Flow_13u92su</bpmn:outgoing>
       <bpmn:outgoing>Flow_1bpca4z</bpmn:outgoing>
@@ -43,12 +55,12 @@
     <bpmn:sequenceFlow id="Flow_1gn37vq" sourceRef="IsReady" targetRef="CanWeEat" />
     <bpmn:sequenceFlow id="Flow_13u92su" name="Yes" sourceRef="CanWeEat" targetRef="LetUsEat" />
     <bpmn:sequenceFlow id="Flow_1bpca4z" name="No" sourceRef="CanWeEat" targetRef="OrderOnline" />
-    <bpmn:endEvent id="Event_1hlu0bs">
+    <bpmn:endEvent id="End_Process">
       <bpmn:incoming>Flow_07qsy0u</bpmn:incoming>
       <bpmn:incoming>Flow_1ks0pq6</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_07qsy0u" sourceRef="LetUsEat" targetRef="Event_1hlu0bs" />
-    <bpmn:sequenceFlow id="Flow_1ks0pq6" sourceRef="OrderOnline" targetRef="Event_1hlu0bs" />
+    <bpmn:sequenceFlow id="Flow_07qsy0u" sourceRef="LetUsEat" targetRef="End_Process" />
+    <bpmn:sequenceFlow id="Flow_1ks0pq6" sourceRef="OrderOnline" targetRef="End_Process" />
     <bpmn:sequenceFlow id="Flow_1vpwn8t" sourceRef="Event_0y9m0tm" targetRef="OrderOnline" />
     <bpmn:serviceTask id="CheckIngredients" name="Do I have all ingredients ?" camunda:delegateExpression="#{CheckIngredients}">
       <bpmn:incoming>Flow_02ka33a</bpmn:incoming>
@@ -138,8 +150,11 @@
         <di:waypoint x="210" y="118" />
         <di:waypoint x="210" y="150" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Event_0mmbodz_di" bpmnElement="Event_0mmbodz">
+      <bpmndi:BPMNShape id="Event_0mmbodz_di" bpmnElement="Start_Process">
         <dc:Bounds x="192" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="177" y="52" width="67" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1cq7h5n_di" bpmnElement="CanWeCook" isMarkerVisible="true">
         <dc:Bounds x="315" y="165" width="50" height="50" />
@@ -159,11 +174,20 @@
           <dc:Bounds x="675" y="215" width="53" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0y9m0tm_di" bpmnElement="Event_0y9m0tm">
+        <dc:Bounds x="582" y="282" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="582" y="325" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0ks8q6r_di" bpmnElement="CanWeEat" isMarkerVisible="true">
         <dc:Bounds x="775" y="165" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="764" y="135" width="74" height="14" />
+          <dc:Bounds x="771" y="135" width="63" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1hlu0bs_di" bpmnElement="End_Process">
+        <dc:Bounds x="922" y="282" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_00z3y4d_di" bpmnElement="CheckIngredients">
         <dc:Bounds x="160" y="150" width="100" height="80" />
@@ -176,15 +200,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_15y7q4x_di" bpmnElement="LetUsEat">
         <dc:Bounds x="890" y="150" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0y9m0tm_di" bpmnElement="Event_0y9m0tm">
-        <dc:Bounds x="582" y="282" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="582" y="325" width="36" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1hlu0bs_di" bpmnElement="Event_1hlu0bs">
-        <dc:Bounds x="922" y="282" width="36" height="36" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

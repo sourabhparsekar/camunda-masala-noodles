@@ -1,3 +1,44 @@
-camunda.bpm.admin-user:
-  id: noodles
-  password: noodles
+# Server Configuration
+server:
+  port: 10101
+  servlet:
+    context-path: /camunda-masala-noodles
+
+# Spring Configurations
+spring:
+  application:
+    name: camunda-masala-noodles
+  datasource:
+    url: jdbc:h2:mem:camunda-h2-database
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 50
+      connectionTimeout: 2000
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: create-drop
+        jdbc:
+          lob:
+            non_contextual_creation: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+
+camunda.bpm:
+  admin-user:
+    id: noodles
+    password: noodles
+  metrics:
+    db-reporter-activate: false
+  database:
+    schema-update: create-drop
