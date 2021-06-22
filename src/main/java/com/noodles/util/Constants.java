@@ -5,6 +5,16 @@ package com.noodles.util;
  */
 public class Constants {
 
+    public static final String INGREDIENTS_AVAILABLE = "IngredientsAvailable";
+    public static final String NOODLES = "noodles";
+    public static final String WATER = "water";
+    public static final String PAN_SPATULA = "pan_and_spatula";
+    public static final String ONION = "onion";
+    public static final String TOMATO = "tomato";
+    public static final String CHEESE = "cheese";
+    public static final String CARROT = "carrot";
+    public static final String CAPSICUM = "capsicum";
+
     private Constants() {
         throw new IllegalStateException("Constants Utility Class. Cannot be instantiated.");
     }
