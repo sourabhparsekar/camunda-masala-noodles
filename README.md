@@ -1,6 +1,6 @@
 # Cook Veg Masala Noodles using Camunda Workflow
 
-This standalone process application is an example using [Camunda Workflow](https://camunda.com/) & [Springboot](https://spring.io/projects/spring-boot). As for the use case, we will try to _cook veg masala instant noodles_ else order from our favourite restaurant if we fail. 
+This standalone process application is an example using [Camunda Workflow](https://camunda.com/) & [Springboot](https://spring.io/projects/spring-boot). As for the use case, we will try to _cook veg masala instant noodles_ else order from our favorite restaurant if we fail. 
 
 _**Note:** You may see that some cooking steps may not be intuitive, but they are added to make use of features of camunda._ 
 
