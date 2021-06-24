@@ -10,7 +10,7 @@
           <camunda:formField id="cheese" label="Do you have a cheese block ?" type="boolean" />
           <camunda:formField id="carrot" label="Do you have small carrot ?" type="boolean" />
           <camunda:formField id="capsicum" label="Do you have half capsicum?" type="boolean" />
-          <camunda:formField id="water" label="do you have 300 ml water ?  " type="boolean" />
+          <camunda:formField id="water" label="Do you have 300 ml water ?  " type="boolean" />
           <camunda:formField id="pan_and_spatula" label="Do you have shallow pan and spatula?" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
@@ -73,7 +73,7 @@
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_10hgq98" sourceRef="IsReady" targetRef="LetUsEat" />
   </bpmn:process>
-  <bpmn:message id="Message_1fwm5d8" name="Something Cooked" />
+  <bpmn:message id="Message_1fwm5d8" name="noodles cooked" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="CookMasalaVeggiesNoodles">
       <bpmndi:BPMNEdge id="Flow_1vpwn8t_di" bpmnElement="Flow_1vpwn8t">

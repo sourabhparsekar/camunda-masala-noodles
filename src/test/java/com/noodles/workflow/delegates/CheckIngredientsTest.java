@@ -43,7 +43,7 @@ class CheckIngredientsTest {
         checkIngredients.execute(execution);
 
         //one additional variable added to execution
-        Assertions.assertEquals((variables.size()+1), execution.getVariables().size());
+        Assertions.assertEquals((variables.size() + 1), execution.getVariables().size());
 
         //check all mandatory ingredients are avaialble
         Assertions.assertEquals(true, execution.getVariable(Constants.INGREDIENTS_AVAILABLE));
@@ -67,7 +67,7 @@ class CheckIngredientsTest {
         checkIngredients.execute(execution);
 
         //one additional variable added to execution
-        Assertions.assertEquals((variables.size()+1), execution.getVariables().size());
+        Assertions.assertEquals((variables.size() + 1), execution.getVariables().size());
 
         //check all mandatory ingredients are avaialble
         Assertions.assertEquals(true, execution.getVariable(Constants.INGREDIENTS_AVAILABLE));
@@ -85,7 +85,7 @@ class CheckIngredientsTest {
         checkIngredients.execute(execution);
 
         //one additional variable added to execution
-        Assertions.assertEquals((variables.size()+1), execution.getVariables().size());
+        Assertions.assertEquals((variables.size() + 1), execution.getVariables().size());
 
         //check all mandatory ingredients are avaialble
         Assertions.assertEquals(false, execution.getVariable(Constants.INGREDIENTS_AVAILABLE));
@@ -103,7 +103,7 @@ class CheckIngredientsTest {
         checkIngredients.execute(execution);
 
         //one additional variable added to execution
-        Assertions.assertEquals((variables.size()+1), execution.getVariables().size());
+        Assertions.assertEquals((variables.size() + 1), execution.getVariables().size());
 
         //check all mandatory ingredients are avaialble
         Assertions.assertEquals(false, execution.getVariable(Constants.INGREDIENTS_AVAILABLE));
@@ -121,13 +121,12 @@ class CheckIngredientsTest {
         checkIngredients.execute(execution);
 
         //one additional variable added to execution
-        Assertions.assertEquals((variables.size()+1), execution.getVariables().size());
+        Assertions.assertEquals((variables.size() + 1), execution.getVariables().size());
 
         //check all mandatory ingredients are avaialble
         Assertions.assertEquals(false, execution.getVariable(Constants.INGREDIENTS_AVAILABLE));
 
     }
-
 
 
 }

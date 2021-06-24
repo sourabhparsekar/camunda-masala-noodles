@@ -16,8 +16,9 @@ public final class WorkflowLogger {
 
     /**
      * INFO log statement
-     * @param logger : logger used in the calling class
-     * @param method : method description
+     *
+     * @param logger  : logger used in the calling class
+     * @param method  : method description
      * @param message : processing details
      */
     public static void info(Logger logger, String method, String message) {
@@ -27,9 +28,10 @@ public final class WorkflowLogger {
 
     /**
      * ERROR log statement with exception trace
-     * @param logger : logger used in the calling class
-     * @param method : method description
-     * @param message : processing details
+     *
+     * @param logger    : logger used in the calling class
+     * @param method    : method description
+     * @param message   : processing details
      * @param exception : exception trace details
      */
     public static void error(Logger logger, String method, String message, Exception exception) {
@@ -39,8 +41,9 @@ public final class WorkflowLogger {
 
     /**
      * ERROR log statement
-     * @param logger : logger used in the calling class
-     * @param method : method description
+     *
+     * @param logger  : logger used in the calling class
+     * @param method  : method description
      * @param message : processing details
      */
     public static void error(Logger logger, String method, String message) {

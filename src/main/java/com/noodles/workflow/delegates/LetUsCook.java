@@ -29,10 +29,14 @@ public class LetUsCook implements JavaDelegate {
         WorkflowLogger.info(logger, STEP + 1, "Take a deep-bottomed pan over medium flame and add water in it and bring it to a boil.");
 
         StringJoiner vegetables = new StringJoiner(", ");
-        if (execution.hasVariable(Constants.ONION) && (boolean) execution.getVariable(Constants.ONION)) vegetables.add(Constants.ONION);
-        if (execution.hasVariable(Constants.TOMATO) && (boolean) execution.getVariable(Constants.TOMATO)) vegetables.add(Constants.TOMATO);
-        if (execution.hasVariable(Constants.CARROT) && (boolean) execution.getVariable(Constants.CARROT)) vegetables.add(Constants.CARROT);
-        if (execution.hasVariable(Constants.CAPSICUM) && (boolean) execution.getVariable(Constants.CAPSICUM)) vegetables.add(Constants.CAPSICUM);
+        if (execution.hasVariable(Constants.ONION) && (boolean) execution.getVariable(Constants.ONION))
+            vegetables.add(Constants.ONION);
+        if (execution.hasVariable(Constants.TOMATO) && (boolean) execution.getVariable(Constants.TOMATO))
+            vegetables.add(Constants.TOMATO);
+        if (execution.hasVariable(Constants.CARROT) && (boolean) execution.getVariable(Constants.CARROT))
+            vegetables.add(Constants.CARROT);
+        if (execution.hasVariable(Constants.CAPSICUM) && (boolean) execution.getVariable(Constants.CAPSICUM))
+            vegetables.add(Constants.CAPSICUM);
 
         if (vegetables.length() < 4)
             WorkflowLogger.info(logger, STEP + 2, "While the water boils, take a chopping board and chop " + vegetables);

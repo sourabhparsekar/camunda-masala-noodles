@@ -12,8 +12,6 @@ import org.mockito.MockitoAnnotations;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class LetUsEatTest {
 
     DelegateExecution execution;

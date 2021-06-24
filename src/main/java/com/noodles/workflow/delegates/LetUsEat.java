@@ -9,13 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service("LetUsEat")
-public class LetUsEat  implements JavaDelegate {
+public class LetUsEat implements JavaDelegate {
 
     public static final String EAT_NOODLES = "Eat Noodles";
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
      * We will eat what we cooked if it was not burnt
+     *
      * @param execution : Process Variables will be retrieved from DelegateExecution
      */
     @Override
