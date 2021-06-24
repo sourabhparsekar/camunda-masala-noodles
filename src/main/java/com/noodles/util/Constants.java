@@ -6,6 +6,10 @@ package com.noodles.util;
 public class Constants {
 
     public static final String INGREDIENTS_AVAILABLE = "IngredientsAvailable";
+    public static final String IS_IT_COOKING = "IsItCooking";
+    public static final String DID_WE_EAT_NOODLES = "DidWeEat";
+    public static String ORDER_ONLINE = "OrderOnline";
+
     public static final String NOODLES = "noodles";
     public static final String WATER = "water";
     public static final String PAN_SPATULA = "pan_and_spatula";

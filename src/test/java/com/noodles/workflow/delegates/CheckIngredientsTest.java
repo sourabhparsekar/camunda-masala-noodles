@@ -1,4 +1,4 @@
-package com.noodles.services.workflow.delegates;
+package com.noodles.workflow.delegates;
 
 import com.noodles.util.Constants;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -11,8 +11,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Mockito based JUnit 5 test to validate inputs

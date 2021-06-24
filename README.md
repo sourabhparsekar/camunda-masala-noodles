@@ -21,8 +21,9 @@ Out of the [BMPN 2.0 Implementations](https://docs.camunda.org/manual/7.15/refer
 - If the minimum ingredients are available then we put everything in pan, give it a stir, close it with a lid and keep it over heat. (Use your preference there).
 - If you smell it nice then open the lid and check if it's cooked.  
 - If you get busy with something else and you forget to check it, then after 15 minutes cooking timer will expire, and you have to order online as noodles have burnt.
-- Luckily, if you see that it's cooked well, then you can eat it. Else.. Sorry, but your efforts are wasted, and you need to order online. 
-- With that we reach end of our non-intuitive flow to cook instant noodles. By the way, that's how I cook instant noodles, and they turn out good most of the time. 
+- Luckily, if you see that it's cooked well, then you can eat it. Else.. Sorry, but your efforts are wasted, and you need to order online. Enjoy cooking!!
+
+With that we reach end of our non-intuitive flow to cook my instant noodles. By the way, that's how I cook instant noodles, and they turn out good most of the times. 
 
 ## Code Configuration
 

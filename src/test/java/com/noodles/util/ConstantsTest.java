@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ConstantsTest {
 
     @Test
-    void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    void test_Constructor_Is_Private() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Constructor<Constants> constructor = Constants.class.getDeclaredConstructor();
         assertTrue(Modifier.isPrivate(constructor.getModifiers()));
         constructor.setAccessible(true);

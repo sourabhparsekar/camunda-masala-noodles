@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WorkflowLoggerTest {
 
     @Test
-    void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    void test_Constructor_Is_Private() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Constructor<WorkflowLogger> constructor = WorkflowLogger.class.getDeclaredConstructor();
         assertTrue(Modifier.isPrivate(constructor.getModifiers()));
         constructor.setAccessible(true);

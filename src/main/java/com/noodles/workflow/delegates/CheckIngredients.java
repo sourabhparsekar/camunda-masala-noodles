@@ -1,4 +1,4 @@
-package com.noodles.services.workflow.delegates;
+package com.noodles.workflow.delegates;
 
 import com.noodles.util.Constants;
 import com.noodles.util.WorkflowLogger;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 @Service("CheckIngredients")
 public class CheckIngredients implements JavaDelegate {
 
+    public static final String CHECK_INGREDIENTS = "Check Ingredients";
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -21,7 +22,7 @@ public class CheckIngredients implements JavaDelegate {
     @Override
     public void execute(DelegateExecution execution) {
 
-        WorkflowLogger.info(logger, "Check Ingredients", "Check ingredients to make veg masala noodles");
+        WorkflowLogger.info(logger, CHECK_INGREDIENTS, "Check ingredients to make veg masala noodles");
 
         boolean ingredientsAvailable;
 
@@ -35,10 +36,10 @@ public class CheckIngredients implements JavaDelegate {
 
         if (instantNoodles && water && panSpatula) {
             ingredientsAvailable = true;
-            WorkflowLogger.info(logger, "Check Ingredients", "we can make veg masala noodles");
+            WorkflowLogger.info(logger, CHECK_INGREDIENTS, "we can make veg masala noodles");
         } else {
             ingredientsAvailable = false;
-            WorkflowLogger.error(logger, "Check Ingredients", "we cannot make veg masala noodles as required ingredient is missing. Instant Noodles, Water, Pan and Spatula are required.");
+            WorkflowLogger.error(logger, CHECK_INGREDIENTS, "we cannot make veg masala noodles as required ingredient is missing. Instant Noodles, Water, Pan and Spatula are required.");
         }
 
         execution.setVariable(Constants.INGREDIENTS_AVAILABLE, ingredientsAvailable);
