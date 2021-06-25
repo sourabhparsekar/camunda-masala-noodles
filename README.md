@@ -44,8 +44,6 @@ On systems running the `API`, it is recommended to use the below port for starti
 
 > `10101` – default api listening port
 
-http://localhost:10101/camunda-masala-noodles/swagger-ui.html
-
 ### API Build & deploy from GIT repo
 Below section would cover high level tasks required to configure and deploy api jar using Apache Maven
 
