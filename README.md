@@ -1,5 +1,6 @@
 # Cook Veg Masala Noodles using Camunda Workflow
 ***
+![Camunda + Springboot](./documentation/images/camunda%20springboot.png)
 
 ## Introduction:
 This standalone process application is an example using [Camunda Workflow](https://camunda.com/) & [Springboot](https://spring.io/projects/spring-boot) with JUnit5 Test cases. As for the use case, we will try to _cook veg masala instant noodles_ else order from our favorite restaurant if we fail. 
