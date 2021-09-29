@@ -24,7 +24,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        ddl-auto: create-drop
+        ddl-auto: create-update
         jdbc:
           lob:
             non_contextual_creation: false
